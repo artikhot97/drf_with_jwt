@@ -45,4 +45,16 @@ class UserSerializer(serializers.ModelSerializer):
 
     #     return instance
 
+class UserMangerCreateSerializer(serializers.ModelSerializer):
+    manger = UserManagerSerializer()
+
+    """
+    However UserSerializer is a bit more complicated. Because we need the UserManger to be serialized/deserialized as 
+    part of the User model we created a Writable Nested Serializer as defined in the DRF documentation. 
+    That is, a serializer that uses another serializer for a particular field ( manger in this case).
+    """
+    class Meta:
+        model = User
+        fields = ('email', 'first_name', 'last_name', 'password', 'manger')
+        extra_kwargs = {'password': {'write_only': True}}
 

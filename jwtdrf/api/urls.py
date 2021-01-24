@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from rest_framework import routers
-from api.views import UserViewSet,PaginationView,RegisterView
+from api.views import *
 from rest_framework.documentation import include_docs_urls
 from rest_framework_swagger.views import get_swagger_view
 
@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^auth/', include('rest_auth.urls')),
     url(r'^users/register/$', RegisterView.as_view(), name='user-register'),
+    url(r'register_manager/$', RegisterViewNormal.as_view(), name='register_manager'),
     url(r'^docs/', schema_view),
     url(r'^pagination_list/$',PaginationView.as_view()),
 ]

@@ -26,10 +26,15 @@ class UserManager(models.Model):
     dob = models.DateField()
     address = models.CharField(max_length=255)
 
-# class UserEmpolyee(models.Model):
-#     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='empolyee')
-#     company = models.CharField(max_length=5)
-#     dob = models.DateField()
-#     address = models.CharField(max_length=255)
-#     mobile = models.CharField(max_length=50)
-#     city = models.CharField(max_length=50)
+
+"""
+UserEmpolyee is Custom User models
+"""
+class UserEmpolyee(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='empolyee')
+    company = models.CharField(max_length=5)
+    dob = models.DateField()
+    address = models.CharField(max_length=255)
+    mobile = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+

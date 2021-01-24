@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from rest_framework import viewsets
 from api.models import UserManager,User
-from api.serializers import UserSerializer
+from api.serializers import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
@@ -28,12 +28,12 @@ class RegisterView(generics.CreateAPIView):
     serializer_class = UserSerializer
     queryset = UserManager.objects.all()
 
-
-    # def get(self, validated_data):
-    #     serializer_class = UserSerializer(data=validated_data.data)
-    #     if serializer_class.is_valid():
-    #         serializer_class.save()
-    #     return Response(serializer_class.data)
+class RegisterViewNormal(generics.CreateAPIView):
+    def get(self, validated_data):
+        serializer_class = UserMangerCreateSerializer
+        if serializer_class.is_valid():
+            serializer_class.save()
+        return Response(serializer_class.data)
 
 
 class UserViewSet(viewsets.ModelViewSet):
