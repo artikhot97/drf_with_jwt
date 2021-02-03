@@ -13,3 +13,14 @@ Need to Install Following Package :
 
 Start Local host & Run Server :
 
+For Login :
+http://127.0.0.1/api/auth/login 
+
+For Register :
+http://127.0.0.1/api/users
+
+For list :
+http://127.0.0.1/api/users
+
+For Swagger :
+http://127.0.0.1/api/docs
