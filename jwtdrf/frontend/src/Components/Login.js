@@ -18,7 +18,7 @@ class Login extends Component {
     };
 
     axios
-      .post("http://localhost:8000/users/login", data)
+      .post("auth/login", data)
       .then((res) => {
         console.log(res);
         localStorage.setItem("token", res.data.token);

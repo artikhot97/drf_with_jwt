@@ -15,7 +15,7 @@ class Register extends Component {
     console.log(data);
 
     axios
-      .post("users/register", data)
+      .post("api/users", data)
       .then((res) => {
         console.log(res);
       })
