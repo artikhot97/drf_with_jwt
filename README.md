@@ -24,3 +24,16 @@ http://127.0.0.1/api/users
 
 For Swagger :
 http://127.0.0.1/api/docs
+
+
+For React :
+Requirment 
+npm install --save-dev babel-preset-es2015 babel-preset-stage-3
+npm install --save bootstrap@^4.0.0-alpha.6  react-bootstrap@^0.32.1
+npm install @reduxjs/toolkit
+npm install react-redux
+npm i react-router-dom
+npm i axios
+
+npm run build 
+npm start
